@@ -19,6 +19,7 @@ public class MainRun {
         Map<String, String> path = new HashMap<String, String>();
         path.put("m1", "d:/Hadoop/file/matrix/m1.csv");// 本地的数据文件
         path.put("m2", "d:/Hadoop/file/matrix/m2.csv");
+        
         path.put("input", HDFS + "/user/hdfs/matrix");// HDFS的目录
         path.put("input1", HDFS + "/user/hdfs/matrix/m1");
         path.put("input2", HDFS + "/user/hdfs/matrix/m2");

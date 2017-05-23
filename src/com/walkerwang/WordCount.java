@@ -1,4 +1,4 @@
-package com.wang;
+package com.walkerwang;
 
 /**
  * 单词计数
@@ -61,16 +61,18 @@ public class WordCount {
     }
     Job job = new Job(conf, "word count");
     job.setJarByClass(WordCount.class);
+    
     job.setMapperClass(TokenizerMapper.class);
     job.setCombinerClass(IntSumReducer.class);
     job.setReducerClass(IntSumReducer.class);
+    
     job.setOutputKeyClass(Text.class);
     job.setOutputValueClass(IntWritable.class);
+    
     for (int i = 0; i < otherArgs.length - 1; ++i) {
       FileInputFormat.addInputPath(job, new Path(otherArgs[i]));
     }
-    FileOutputFormat.setOutputPath(job,
-      new Path(otherArgs[otherArgs.length - 1]));
+    FileOutputFormat.setOutputPath(job, new Path(otherArgs[otherArgs.length - 1]));
     System.exit(job.waitForCompletion(true) ? 0 : 1);
   }
 }
