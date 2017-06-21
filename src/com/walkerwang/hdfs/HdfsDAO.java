@@ -16,7 +16,7 @@ import org.apache.hadoop.mapred.JobConf;
 
 public class HdfsDAO {
 
-    private static final String HDFS = "hdfs://192.168.1.210:9000/";
+    private static final String HDFS = "hdfs://192.168.50.134:9000/";
 
     public HdfsDAO(Configuration conf) {
         this(HDFS, conf);

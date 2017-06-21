@@ -17,12 +17,17 @@ public class PageRankJob {
 
 //        Map<String, String> path = peoplerank();// peoplerank数据集
 
+        //多个Job，工作流应用程序：AdjacencyMatrix-->PageRank-->Normal
         try {
+        	//初始邻接矩阵构建
             AdjacencyMatrix.run(path);
-            int iter = 10;
+            int iter = 5;
+            //PageRank的迭代过程
             for (int i = 0; i < iter; i++) {// 迭代执行
+            	System.out.println("第"+ (i+1) + "次迭代");
                 PageRank.run(path);
             }
+            //规范化处理
             Normal.run(path);
         } catch (Exception e) {
             e.printStackTrace();
@@ -55,7 +60,7 @@ public class PageRankJob {
         path.put("d", "0.85");// 阻尼系数
 
         path.put("input", HDFS + "/user/hdfs/pagerank");// HDFS的目录
-        path.put("input_pr", HDFS + "/user/hdfs/pagerank/pr");// pr存储目
+        path.put("input_pr", HDFS + "/user/hdfs/pagerank/pr");// pr存储目录
         path.put("tmp1", HDFS + "/user/hdfs/pagerank/tmp1");// 临时目录,存放邻接矩阵
         path.put("tmp2", HDFS + "/user/hdfs/pagerank/tmp2");// 临时目录,计算到得PR,覆盖input_pr
 

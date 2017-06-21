@@ -24,6 +24,9 @@ public class AdjacencyMatrix {
 	private static int nums = 4;	//页面数
 	private static float d = 0.85f;	//阻尼系数
 	
+	/*
+	 * 邻接矩阵
+	 */
 	public static class AdjacencyMatrixMapper extends Mapper<LongWritable, Text, Text, Text>{
 		
 		@Override
@@ -37,6 +40,9 @@ public class AdjacencyMatrix {
 		}
 	}
 	
+	/*
+	 * 概率矩阵
+	 */
 	public static class AdjacencyMatrixReducer extends Reducer<Text, Text, Text, Text> {
 		
 		@Override

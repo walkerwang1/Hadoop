@@ -20,6 +20,9 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import com.walkerwang.hdfs.HdfsDAO;
 
 
+/*
+ * 标准化，让pr的值落在(0,1)中间
+ */
 public class Normal {
 
 	public static class NormalMapper extends Mapper<LongWritable, Text, Text, Text> {
