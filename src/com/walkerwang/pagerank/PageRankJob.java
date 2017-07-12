@@ -13,8 +13,18 @@ public class PageRankJob {
     public static final Pattern DELIMITER = Pattern.compile("[\t,]");
 
     public static void main(String[] args) {
-         Map<String, String> path = pagerank(); //pagerank数据集
+        
+    	Map<String, String> path = pagerank(); //pagerank数据集
 
+         /*
+          * peoplerank开发步骤：
+          * 1-微博好友的关系数据：people.cv
+          * 2-初始的PR数据：peoplerank.csv
+          * 3-邻接矩阵：AdjacencyMatrix.java
+          * 4-PeopleRank计算：PageRank.java
+          * 5-PR标准化：Normal
+          * 6-启动程序：PageRankJob.java
+          */
 //        Map<String, String> path = peoplerank();// peoplerank数据集
 
         //多个Job，工作流应用程序：AdjacencyMatrix-->PageRank-->Normal
